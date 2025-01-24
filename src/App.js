@@ -75,6 +75,7 @@ function App() {
           </div>
         </div>
       )}
+      <div className="scroll-watcher"></div>
       <BrowserRouter>
         <ToastContainer />
         <Routes>
