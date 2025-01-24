@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Whatsapp from '../components/Whatsapp.';
 import { toast } from "react-toastify";
 import sap from '../images/sap.png';
-import img1 from '../images/1.jpeg';
+import img1 from '../images/sap.png';
 
 const Home = () => {
 
