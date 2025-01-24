@@ -9,6 +9,7 @@ import Whatsapp from './components/Whatsapp.';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import signupImage from "./Screenshot_2025-01-23_124650-removebg-preview.png";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true); // Modal is open by default
