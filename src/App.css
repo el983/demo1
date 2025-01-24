@@ -156,4 +156,22 @@ h2 {
   font-size: 0.9rem;
 }
 
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
 @import '~@fortawesome/fontawesome-free/css/all.css';
