@@ -225,6 +225,23 @@ h2 {
   transform: scale(1.2);
 }
 
+.scroll-watcher{
+  height: 5px;
+  position: fixed;
+  top:0;
+  z-index: 10000;
+  background-color: greenyellow;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll(y) ;
+}
+
+@keyframes scroll-watcher{
+  to {scale: 1 1;}
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
   .modal {
