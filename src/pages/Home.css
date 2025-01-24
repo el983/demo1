@@ -1,20 +1,11 @@
 
 .home-main{
-    padding: 40px;
     display: flex;
     width: 100%;
     font-family: 'Times New Roman', Times, serif; 
     scroll-behavior: smooth;
-    background: lightblue url('../images/home.jpeg') no-repeat fixed center;
+    background: url('../images/home.jpeg') no-repeat fixed center;
    }
-.home-form{
-    height:665px;
-    width: 25%;
-    margin-left: auto;   
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    background-color: #f2f6fc;
-    border-radius: 6px;
-}
 .nav-pic {
     position:sticky;
     width: 100%;    
