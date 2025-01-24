@@ -1,36 +1,38 @@
-import React from 'react';
-import './Navbar.css';
+import React from "react";
 import { NavLink } from "react-router-dom";
-import sap from '../images/sap.png';
+import "./Navbar.css";
 
-const Navbar = () => {
-    const onChange = () => {
-        const x = document.querySelector('.nav-items1');
-        x.style.display = x.style.display === "none" ? "grid" : "none";
-    };
+function FloatingBallMenu() {
+  const navItems = [
+    { text: "Home", icon: "fa-solid fa-house", path: "/" },
+    { text: "Contact us", icon: "fa-solid fa-comments", path: "/contact" },
+    { text: "About us", icon: "fa-solid fa-book-open", path: "/about" },
+  ];
 
-    return (
-        <>
-        <div className="nav">
-            <div className="navbar">
-                <div className='nav-title'><h4>Elpis Learning Consultants LLP </h4></div>
-                <div className='lalu'>
-                    <span className='span' onClick={onChange}><i className="ri-menu-line"></i></span>
-                    <div className="nav-items">
-                        <NavLink exact to="/" activeClassName="active-link">Home</NavLink>
-                        <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
-                        <NavLink to="/about" activeClassName="active-link">About</NavLink>
-                    </div>
-                </div>
-            </div>
-            <div className="nav-items1">
-                <NavLink exact to="/" activeClassName="active-link" onClick={onChange}>Home</NavLink>
-                <NavLink to="/contact" activeClassName="active-link" onClick={onChange}>Contact</NavLink>
-                <NavLink to="/about" activeClassName="active-link" onClick={onChange}>About</NavLink>
-            </div>
-        </div>
-        </>
-    )
+  return (
+    <div className="container">
+      <div className="logo">Elpis Learning Consultants LLP</div>
+
+      <div className="navigation">
+        <ul>
+          {navItems.map((item, index) => (
+            <li
+  key={index}
+  className={`list ${window.location.pathname === item.path ? "active" : ""}`}
+>
+  <NavLink to={item.path}>
+    <span className="icon">
+      <i className={item.icon}></i>
+    </span>
+    <span className="text">{item.text}</span>
+  </NavLink>
+</li>
+          ))}
+          <div className="indicator"></div>
+        </ul>
+      </div>
+    </div>
+  );
 }
 
-export default Navbar;
+export default FloatingBallMenu;
