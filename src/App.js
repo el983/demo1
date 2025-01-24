@@ -33,6 +33,11 @@ function App() {
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
           >
             <div className="form-wrapper">
+
+              {/* Close Button */}
+              <button className="close-btn" onClick={closeModal}>
+                &times; {/* Use a close icon (×) */}
+              </button>
               {/* Left Section: Form */}
               <div className="form-left">
                 <h2>Sign up</h2>
