@@ -97,7 +97,7 @@
     background: rgba(108, 228, 152, 0.5); /* Semi-transparent green */
     border-radius: 50%;
     box-shadow: #a5f6c2;
-    transition: transform 0.3s ease; /* Smooth transition for scale */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for scale */
     z-index: -1; /* Place it behind the icon */
   }
   
@@ -114,7 +114,6 @@
     border-radius: 50%;
     border: 0px solid #cbcbcb;
     box-shadow: 0 0 10px rgba(182, 182, 182, 0.8);
-    transition: transform 0.3s ease-in-out; /* Add smooth transition */
   }
   
   /* Active indicator movement */
@@ -129,8 +128,8 @@
   .navigation ul li:nth-child(3).active ~ .indicator {
     transform: translateX(calc(82px * 4));
   }
-  /* Media Query for smaller screens */
-@media (max-width: 768px) {
+
+  @media screen and (max-width: 768px) {
     .container {
       height: 80px; /* Further reduced height */
       padding: 0 10px;
@@ -165,3 +164,4 @@
     .navigation ul li:nth-child(3).active ~ .indicator {
       transform: translateX(calc(50px * 3));
     }
+  }
