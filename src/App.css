@@ -1,3 +1,57 @@
+/* Base styles */
+@keyframes floating {
+  0% {
+    transform: translate(-50%, -50%) translateY(-10px); /* Top */
+  }
+  6.25% {
+    transform: translate(calc(-50% - 3px), calc(-50% - 7px)); /* Slightly towards top-left */
+  }
+  12.5% {
+    transform: translate(calc(-50% - 5px), calc(-50% - 5px)); /* Top-left */
+  }
+  18.75% {
+    transform: translate(calc(-50% - 7px), calc(-50% - 3px)); /* More towards left */
+  }
+  25% {
+    transform: translate(calc(-50% - 10px), -50%); /* Fully to the left */
+  }
+  31.25% {
+    transform: translate(calc(-50% - 7px), calc(-50% + 3px)); /* Slightly towards bottom-left */
+  }
+  37.5% {
+    transform: translate(calc(-50% - 5px), calc(-50% + 5px)); /* Bottom-left */
+  }
+  43.75% {
+    transform: translate(calc(-50% - 3px), calc(-50% + 7px)); /* Almost fully downward */
+  }
+  50% {
+    transform: translate(-50%, calc(-50% + 10px)); /* Fully to the bottom */
+  }
+  56.25% {
+    transform: translate(calc(-50% + 3px), calc(-50% + 7px)); /* Slightly towards bottom-right */
+  }
+  62.5% {
+    transform: translate(calc(-50% + 5px), calc(-50% + 5px)); /* Bottom-right */
+  }
+  68.75% {
+    transform: translate(calc(-50% + 7px), calc(-50% + 3px)); /* Almost fully right */
+  }
+  75% {
+    transform: translate(calc(-50% + 10px), -50%); /* Fully to the right */
+  }
+  81.25% {
+    transform: translate(calc(-50% + 7px), calc(-50% - 3px)); /* Slightly towards top-right */
+  }
+  87.5% {
+    transform: translate(calc(-50% + 5px), calc(-50% - 5px)); /* Top-right */
+  }
+  93.75% {
+    transform: translate(calc(-50% + 3px), calc(-50% - 7px)); /* Almost back to top */
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-10px); /* Back to Top */
+  }
+}
 
 .modal {
   position: fixed;
@@ -12,6 +66,7 @@
   box-shadow: 0 4px 10px rgba(236, 229, 229, 0.68);
   opacity: 0;
   transition: opacity 1.2s ease, transform 1.2s ease;
+  animation: floating 10s linear infinite;
 }
 
 .modal-active {
@@ -37,7 +92,6 @@
   visibility: visible;
 }
 
-
 .form-container {
   text-align: center;
 }
@@ -55,7 +109,6 @@ h2 {
 .input-group i {
   margin-right: 0.5rem;
 }
-
 
 .terms {
   display: flex;
@@ -82,8 +135,6 @@ h2 {
 .register-btn:hover {
   background-color: #0056b3;
 }
-
-
 
 .form-wrapper {
   display: flex;
@@ -174,4 +225,35 @@ h2 {
   transform: scale(1.2);
 }
 
-@import '~@fortawesome/fontawesome-free/css/all.css';
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .modal {
+    padding: 1rem;
+    width: 95%;
+    will-change: transform, opacity;
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+  }
+
+  .form-left,
+  .form-right {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .form-right img {
+    max-width: 80%;
+  }
+
+  .register-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem 0.6rem 2.2rem;
+  }
+}
