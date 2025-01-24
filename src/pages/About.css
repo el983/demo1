@@ -1,12 +1,11 @@
 .about {
-    padding-top: 30px;        
-    background: lightblue url('../images/home.jpeg') no-repeat fixed center;
+    padding-top: 120px;        
+    background:url('../images/home.jpeg') no-repeat fixed center;
     background-size: cover;
     background-position: center;
     width: 100%;
     color: rgb(0, 0, 0);
     backdrop-filter: blur (10px);
-    padding: 30px;
     font-family: 'Times New Roman', Times, serif; 
     
 }
