@@ -11,22 +11,27 @@ function FloatingBallMenu() {
 
   return (
     <div className="container">
-      <div className="logo">Elpis Learning Consultants LLP</div>
-
+<div class="neon-wrapper">
+    <span class="neon-text">Elpis Learning Consultants LLP</span>
+    <span class="gradient"></span>
+    <span class="dodge"></span>
+</div>
       <div className="navigation">
         <ul>
           {navItems.map((item, index) => (
             <li
-  key={index}
-  className={`list ${window.location.pathname === item.path ? "active" : ""}`}
->
-  <NavLink to={item.path}>
-    <span className="icon">
-      <i className={item.icon}></i>
-    </span>
-    <span className="text">{item.text}</span>
-  </NavLink>
-</li>
+              key={index}
+              className={`list ${
+                window.location.pathname === item.path ? "active" : ""
+              }`}
+            >
+              <NavLink to={item.path}>
+                <span className="icon">
+                  <i className={item.icon}></i>
+                </span>
+                <span className="text">{item.text}</span>
+              </NavLink>
+            </li>
           ))}
           <div className="indicator"></div>
         </ul>
