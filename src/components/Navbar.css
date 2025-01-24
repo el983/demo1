@@ -1,125 +1,131 @@
-.navbar {
-    margin: 0px;
-    padding: 0px;
+  .container {
     position: fixed;
-    display:flex;
+    display: flex;
+    justify-content: space-between; /* Space between the logo and navigation */
     align-items: center;
-    background-color:#0d2c3f;
-    padding: 20px;
     width: 100%;
-    z-index: 1;
-}
-
-.nav-title {
-    font-family: 'Playfair Display SC';
-    width: 75%;
+    height: 150px;
+    padding: 0 20px;
+    background-color: #050925;
+    z-index: 90;
+  }
+  
+  .logo {
     font-size: 50px;
-    margin-left: 0;
-    color: rgb(255, 255, 255);
-}
-
-.lalu {
-    width: 25%;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .navigation {
+    position: fixed; /* Keep the navigation always visible */
+    top: 5%; /* Move it upwards by setting a percentage */
+    right: 20px; /* Keep it aligned to the right */
+    transform: translateY(0); /* Remove vertical centering */
+    width: 400px; /* Adjust width for better visibility */
+    height: 70px;
+    background: #1e293b; /* Dark gray */
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.lalu span {
-    cursor: pointer;
-    display: none;
-    color: #ffffff;
-}
-
-.nav-items {
-    width: 90%;
-    height: auto;
+    justify-content: center;
+    border-radius: 10px;
+    z-index: 90; /* Ensure it stays above other elements */
+  }
+  
+  .navigation ul {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-    color: white;
-    gap: 3vw;
-}
-
-.nav-items1 {
-    display: none;
-}
-
-.nav-items a, .nav-items1 a {
-    position: relative;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    letter-spacing: 0.5px;
-}
-
-.nav-items a:after, .nav-items1 a:after {
-    content: "";
-    position: absolute;
-    background-color: #ffffff;
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: width 0.3s ease-in-out;
-}
-
-.nav-items a:hover:after, .nav-items1 a:hover:after, .active-link:after {
     width: 100%;
-}
-
-.active-link {
-    color: #ffffff;
-}
-
-@media (max-width: 850px) {
-    .span {
-        text-align: right;
-    }
-    .nav-title {
-        width: 90%;
-    }
-    .lalu {
-        display: grid;
-        width: 10%;
-    }
-    .lalu span {
-        display: grid;
-        justify-content: right;
-        align-items: right;
-    }
-    .nav-items {
-        display: none;
-    }
-    .nav-items1 {
-        top: 50px;
-        right: 20px;
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        z-index: 2;
-        margin-left: 250px;
-        background-color: #ffffff;
-        padding: 10px;
-        width: 25%;
-        justify-items: center;
-        border-radius: 6px;
-    }
-    .nav-items1 a {
-        width: 100%;
-        background-color: #ffffff;
-        color: #a2a2a2;
-        border-radius: 3px;
-        text-decoration: none;
-        margin-bottom: 3px;
-        text-align: center;
-        font-weight: bold;
-        border: 0px 0px 1px 0px solid #eee;
-    }
-    .nav-pic{
-        margin-top: 72px;
-    }
-}
+    justify-content: space-between; /* Space icons evenly */
+  }
+  
+  .navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+  
+  .navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #bfe3f3; /* Light blue icons */
+  }
+  
+  .navigation ul li.active a .icon {
+    transform: translateY(-32px);
+  }
+  
+  .navigation ul li a .text {
+    position: absolute;
+    color: #fff;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  
+  .navigation ul li a::before {
+    content: ""; /* Pseudo-element for hover effect */
+    position: absolute;
+    top: 0%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) scale(0); /* Start invisible */
+    width: 70px;
+    height: 70px;
+    background: rgba(108, 228, 152, 0.5); /* Semi-transparent green */
+    border-radius: 50%;
+    box-shadow: #a5f6c2;
+    transition: transform 0.3s ease; /* Smooth transition for scale */
+    z-index: -1; /* Place it behind the icon */
+  }
+  
+  .navigation ul li a:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Expand on hover */
+  }
+  
+  .indicator {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #22c55e; /* Green indicator */
+    border-radius: 50%;
+    border: 0px solid #cbcbcb;
+    box-shadow: 0 0 10px rgba(182, 182, 182, 0.8);
+    transition: transform 0.3s ease-in-out; /* Add smooth transition */
+  }
+  
+  /* Active indicator movement */
+  .navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(68px * 0));
+  }
+  
+  .navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(55px * 3));
+  }
+  
+  .navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(82px * 4));
+  }
