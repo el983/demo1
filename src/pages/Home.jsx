@@ -88,7 +88,7 @@ const Home = () => {
                   <li>The participants will understand the technical aspects of the IBP solutions, such as IBP Configuration and IBP Integration.</li>
                   <li>The participants will understand the technical aspects of the IBP solutions, such as IBP Configuration and IBP Integration.</li>
                   <li>The participants will understand the technical aspects of the IBP solutions, such as IBP Configuration and IBP Integration.</li>
-                  <li><div className="img1"><img src={img1} alt=""/></div></li>
+                  
 
                 </ul>
               </div>              
